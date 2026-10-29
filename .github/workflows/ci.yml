@@ -1,0 +1,25 @@
+name : Integracao Contiua (CI)
+on:
+push:
+branches : ["main"]
+pull_request:
+cat << 'EOF' > .github/workflows/ci.yml
+name : Integracao Contiua (CI)
+on:
+push : 
+branches : ["main"]
+pull_request:
+branches : ["main"]
+
+jobs:
+teste-automatizado:
+runs-on: ubuntu-latest
+
+steps:
+-name : Baixar o codigo do repositorio
+uses: actions/checkout@v4
+
+-name: Executar teste simulado
+run: |
+echo "Iniciando testes automatizados ..."
+echo "Todos os teste  passaram com sucesso "
